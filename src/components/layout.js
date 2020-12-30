@@ -1,53 +1,88 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
 import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-
-import Header from "./header"
-import "./layout.css"
+import { Global, css } from '@emotion/react'
+import Helmet from 'react-helmet';
+import Header from './header';
+import useSiteMetadata from "../hooks/use-sitemetadata";
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+  const { title, description } = useSiteMetadata();
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer style={{
-          marginTop: `2rem`
-        }}>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </div>
-    </>
-  )
-}
+      <Global
+        styles={css`
+          * {
+            box-sizing: border-box;
+            margin: 0;
+          }
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
+          /* More info: https://bit.ly/2PsCnzk */
+          * + * {
+            margin-top: 1rem;
+          }
+
+          html,
+          body {
+            margin: 0;
+            color: #555;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+              Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+              'Segoe UI Emoji', 'Segoe UI Symbol';
+            font-size: 18px;
+            line-height: 1.4;
+
+            /* remove margin for the main div that Gatsby mounts into */
+            > div {
+              margin-top: 0;
+            }
+          }
+
+          h1,
+          h2,
+          h3,
+          h4,
+          h5,
+          h6 {
+            color: #222;
+            line-height: 1.1;
+
+            + * {
+              margin-top: 0.5rem;
+            }
+          }
+
+          strong {
+            color: #222;
+          }
+
+          li {
+            margin-top: 0.25rem;
+          }
+        `}
+      />
+      <Helmet>
+        <html lang="en" />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+      </Helmet>
+      <Header/>
+      <main
+        css={css`
+          margin: 2rem auto;
+          max-width: 550px;
+        `}
+      >
+        {children}
+      </main>
+      <footer
+        css={css`
+          margin-top: 2rem;
+        `}
+      >
+        © {new Date().getFullYear()}, built with 💕 by gg
+      </footer>
+    </>
+  );
+};
 
 export default Layout
