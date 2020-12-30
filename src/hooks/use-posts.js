@@ -7,8 +7,8 @@ const usePosts = () => {
                 nodes {
                     frontmatter {
                         title
-                        author
                         slug
+                        author
                     }
                     excerpt
                 }
