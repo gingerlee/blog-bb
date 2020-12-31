@@ -4,7 +4,7 @@
   "description": "A smol site, to put a thing into the world.",
   "version": "0.1.0",
   "author": "Ginger Lee Kretschmer <ginger.lee.kretschmer@gmail.com>",
-  "license": "0BSD",
+  "license": "MIT",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
