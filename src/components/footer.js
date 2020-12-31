@@ -21,6 +21,10 @@ const FooterLink = styled(Link)`
   }
 `;
 
+const scrollTop = () =>{
+  window.scrollTo({top: 0, behavior: 'smooth'});
+};
+
 const Footer = () => (
   <footer
     css={css`
@@ -42,13 +46,13 @@ const Footer = () => (
       <FooterLink to="/contact/" activeClassName="current-page">
         Contact
       </FooterLink>
-      <FooterLink to="#" activeClassName="current-page">
+      <FooterLink to="#" onClick={scrollTop} activeClassName="current-page">
         Top
       </FooterLink>
     </nav>
     <div>
         ☀ {new Date().getFullYear()} built with 💕 by gg
-      </div>
+    </div>
   </footer>
 );
 
