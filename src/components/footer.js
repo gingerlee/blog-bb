@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { Link } from 'gatsby';
 
-const NavLink = styled(Link)`
+const FooterLink = styled(Link)`
   color: #222;
   font-size: 1rem;
   font-weight: ${props => props.fontWeight || 'normal'};
@@ -21,32 +21,35 @@ const NavLink = styled(Link)`
   }
 `;
 
-const Header = () => (
-  <header
+const Footer = () => (
+  <footer
     css={css`
-      background: #eee;
+      background: linear-gradient(to top, #ddbbffdd 2rem, #ddbbff00);
       border-bottom: 1px solid #ddd;
       display: flex;
+      align-items: flex-end;
       justify-content: space-between;
       padding: 0.5rem calc((100vw - 550px - 0.5rem) / 2);
     `}
   >
-    <NavLink to="/" fontWeight="bold">
-      Blog bb
-    </NavLink>
     <nav
-      css={css`
-        margin-top: 0;
-      `}
-    >
-      <NavLink to="/" activeClassName="current-page">
+    css={css`
+      margin-top: 2rem;
+    `}>
+      <FooterLink to="/" activeClassName="current-page">
         Home
-      </NavLink>
-      <NavLink to="/contact/" activeClassName="current-page">
+      </FooterLink>
+      <FooterLink to="/contact/" activeClassName="current-page">
         Contact
-      </NavLink>
+      </FooterLink>
+      <FooterLink to="#" activeClassName="current-page">
+        Top
+      </FooterLink>
     </nav>
-  </header>
+    <div>
+        ☀ {new Date().getFullYear()} built with 💕 by gg
+      </div>
+  </footer>
 );
 
-export default Header;
+export default Footer;
