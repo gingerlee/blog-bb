@@ -1,5 +1,6 @@
 import React from 'react'
 import Layout from '../components/layout'
+import Hero from '../components/hero'
 import ReadLink from '../components/read-link';
 import PostPreview from '../components/post-preview';
 import usePosts from '../hooks/use-posts'
@@ -7,6 +8,8 @@ import usePosts from '../hooks/use-posts'
 const IndexPage = () => {
   const posts = usePosts();
   return (
+    <>
+    <Hero/>
     <Layout>
       <h1>bb home</h1>
       <p>This thing on?</p>
@@ -17,6 +20,7 @@ const IndexPage = () => {
         <PostPreview key={post.slug} post={post} />
       ))}
     </Layout>
+    </>
   );
 }
 
