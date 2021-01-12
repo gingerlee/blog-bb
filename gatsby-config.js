@@ -5,32 +5,33 @@ module.exports = {
     author: `Ginger Lee Kretschmer`,
   },
   plugins: [
-    'gatsby-plugin-emotion',
+    "gatsby-plugin-emotion",
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: 'gatsby-plugin-mdx',
+      resolve: "gatsby-plugin-mdx",
       options: {
         defaultLayouts: {
-          default: require.resolve('./src/components/layout.js'),
+          default: require.resolve("./src/components/layout.js"),
         },
+        gatsbyRemarkPlugins: ["gatsby-remark-images"],
+        plugins: ["gatsby-remark-images"],
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'posts',
-        path: 'posts',
+        name: "posts",
+        path: "posts",
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: 'images',
-        path: 'images',
+        name: "images",
+        path: "images",
       },
     },
-
   ],
 }
