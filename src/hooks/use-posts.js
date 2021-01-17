@@ -7,8 +7,8 @@ const usePosts = () => {
         nodes {
           frontmatter {
             title
-            slug
             author
+            slug
             image_alt
             image {
               sharp: childImageSharp {
@@ -24,14 +24,13 @@ const usePosts = () => {
     }
   `)
 
-  console.log(data)
   return data.allMdx.nodes.map(post => ({
     title: post.frontmatter.title,
     author: post.frontmatter.author,
     slug: post.frontmatter.slug,
+    excerpt: post.excerpt,
     image: post.frontmatter.image,
     image_alt: post.frontmatter.image_alt,
-    excerpt: post.excerpt,
   }))
 }
 

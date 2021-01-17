@@ -1,16 +1,16 @@
 import React from "react"
 import { css } from "@emotion/react"
 import { Link } from "gatsby"
-import Image from "gatsby-image"
 import ReadLink from "../components/read-link"
+import Image from "gatsby-image"
 
 const PostPreview = ({ post }) => (
   <article
     css={css`
       border-bottom: 1px solid #ddd;
-      display: flex;
-      margin-top: 0;
+      margin-top: 0.75rem;
       padding-bottom: 1rem;
+      display: flex;
 
       :first-of-type {
         margin-top: 1rem;
