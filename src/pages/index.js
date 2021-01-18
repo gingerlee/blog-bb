@@ -1,27 +1,33 @@
-import React from 'react'
-import Layout from '../components/layout'
-import Hero from '../components/hero'
-import ReadLink from '../components/read-link';
-import PostPreview from '../components/post-preview';
-import usePosts from '../hooks/use-posts'
+import React from "react"
+import Layout from "../components/layout"
+import PostPreview from "../components/post-preview"
+import { graphql, useStaticQuery } from "gatsby"
+import usePosts from "../hooks/use-posts"
 
 const IndexPage = () => {
-  const posts = usePosts();
+  const posts = usePosts()
+  const { image } = useStaticQuery(graphql`
+    query {
+      image: file(
+        relativePath: { eq: "sean-sinclair-C_NJKfnTR5A-unsplash.jpg" }
+      ) {
+        sharp: childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+  `)
   return (
     <>
-    <Hero/>
-    <Layout>
-      <h1>bb home</h1>
-      <p>This thing on?</p>
-      <ReadLink to='/about/'>About me &rarr;</ReadLink>
-
-      <h2>Read my blog</h2>
-      {posts.map(post => (
-        <PostPreview key={post.slug} post={post} />
-      ))}
-    </Layout>
+      <Layout image={image.sharp.fluid} imageBackgroundColor="#F0C450">
+        {posts.map(post => (
+          <PostPreview key={post.slug} post={post} />
+        ))}
+      </Layout>
     </>
-  );
+  )
 }
 
 export default IndexPage

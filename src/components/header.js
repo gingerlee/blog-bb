@@ -1,12 +1,19 @@
-import React from 'react';
-import styled from '@emotion/styled';
-import { css } from '@emotion/react';
-import { Link } from 'gatsby';
+import React from "react"
+import styled from "@emotion/styled"
+import { css } from "@emotion/react"
+import { Link } from "gatsby"
 
 const NavLink = styled(Link)`
-  color: #222;
+  background: linear-gradient(
+    94.23deg,
+    #5374fa 12.41%,
+    #fd9179 52.55%,
+    #ff6969 89.95%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-size: 1rem;
-  font-weight: ${props => props.fontWeight || 'normal'};
+  font-weight: ${props => props.fontWeight || "normal"};
   line-height: 1;
   margin: 0 0.5rem 0 0;
   padding: 0.25rem;
@@ -19,21 +26,25 @@ const NavLink = styled(Link)`
   &:last-of-type {
     margin-right: 0;
   }
-`;
+`
 
 const Header = () => (
   <header
     css={css`
-      background: #eee;
       border-bottom: 1px solid #ddd;
       display: flex;
       justify-content: space-between;
       padding: 0.5rem calc((100vw - 550px - 0.5rem) / 2);
+      background: linear-gradient(
+        94.23deg,
+        #5374fa 12.41%,
+        #fd9179 52.55%,
+        #ff6969 89.95%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     `}
   >
-    <NavLink to="/" fontWeight="bold">
-      Blog bb
-    </NavLink>
     <nav
       css={css`
         margin-top: 0;
@@ -47,6 +58,6 @@ const Header = () => (
       </NavLink>
     </nav>
   </header>
-);
+)
 
-export default Header;
+export default Header

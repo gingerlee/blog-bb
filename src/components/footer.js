@@ -1,12 +1,12 @@
-import React from 'react';
-import styled from '@emotion/styled';
-import { css } from '@emotion/react';
-import { Link } from 'gatsby';
+import React from "react"
+import styled from "@emotion/styled"
+import { css } from "@emotion/react"
+import { Link } from "gatsby"
 
 const FooterLink = styled(Link)`
   color: #222;
   font-size: 1rem;
-  font-weight: ${props => props.fontWeight || 'normal'};
+  font-weight: ${props => props.fontWeight || "normal"};
   line-height: 1;
   margin: 0 0.5rem 0 0;
   padding: 0.25rem;
@@ -19,11 +19,11 @@ const FooterLink = styled(Link)`
   &:last-of-type {
     margin-right: 0;
   }
-`;
+`
 
-const scrollTop = () =>{
-  window.scrollTo({top: 0, behavior: 'smooth'});
-};
+const scrollTop = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" })
+}
 
 const Footer = () => (
   <footer
@@ -37,9 +37,10 @@ const Footer = () => (
     `}
   >
     <nav
-    css={css`
-      margin-top: 2rem;
-    `}>
+      css={css`
+        margin-top: 2rem;
+      `}
+    >
       <FooterLink to="/" activeClassName="current-page">
         Home
       </FooterLink>
@@ -50,10 +51,8 @@ const Footer = () => (
         Top
       </FooterLink>
     </nav>
-    <div>
-        ☀ {new Date().getFullYear()} built with 💕 by gg
-    </div>
+    <div>☀ {new Date().getFullYear()} built with 💕 by gg</div>
   </footer>
-);
+)
 
-export default Footer;
+export default Footer
