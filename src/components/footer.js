@@ -28,12 +28,9 @@ const scrollTop = () => {
 const Footer = () => (
   <footer
     css={css`
-      background: linear-gradient(to top, #ddbbffdd 2rem, #ddbbff00);
-      border-bottom: 1px solid #ddd;
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
-      padding: 0.5rem calc((100vw - 550px - 0.5rem) / 2);
     `}
   >
     <nav
@@ -51,7 +48,7 @@ const Footer = () => (
         Top
       </FooterLink>
     </nav>
-    <div>☀ {new Date().getFullYear()} built with 💕 by gg</div>
+    <div>💫 {new Date().getFullYear()}. Built with 💕 by gg</div>
   </footer>
 )
 

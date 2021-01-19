@@ -39,5 +39,12 @@ module.exports = {
         pathToConfigModule: `src/utils/typography.js`,
       },
     },
+    `gatsby-transformer-yaml`,
+    {
+      resolve: `gatsby-source-remote-images`,
+      options: {
+        filter: node => node.internal.type === `UnsplashImagesYaml`,
+      },
+    },
   ],
 }

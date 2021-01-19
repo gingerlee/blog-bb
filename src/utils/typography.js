@@ -26,7 +26,7 @@ const _options = {
   boldWeight: 700,
   bodyColor: `#26222a`,
   scaleRatio: 1.25,
-  accentColor: colors.gatsby,
+  accentColor: colors.lilac,
   monospaceFontFamily: [
     `SFMono-Regular`,
     `Menlo`,
@@ -45,7 +45,7 @@ const _options = {
       },
       a: {
         backgroundImage: `linear-gradient(to top, ${colors.ui.bright}, ${colors.ui.bright} 1px, rgba(0, 0, 0, 0) 2px)`,
-        color: colors.gatsby,
+        color: colors.lavender,
         fontWeight: `bold`,
         textDecoration: `none`,
         transition: `${animation.speedDefault} ${animation.curveDefault}`,

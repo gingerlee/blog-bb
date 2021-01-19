@@ -2,6 +2,7 @@ import React from "react"
 import styled from "@emotion/styled"
 import { css } from "@emotion/react"
 import { Link } from "gatsby"
+import { elevation } from "../utils/presets"
 
 const NavLink = styled(Link)`
   background: linear-gradient(
@@ -34,7 +35,6 @@ const Header = () => (
       border-bottom: 1px solid #ddd;
       display: flex;
       justify-content: space-between;
-      padding: 0.5rem calc((100vw - 550px - 0.5rem) / 2);
       background: linear-gradient(
         94.23deg,
         #5374fa 12.41%,
@@ -43,6 +43,7 @@ const Header = () => (
       );
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      z-index: ${elevation.overlay};
     `}
   >
     <nav
@@ -51,7 +52,7 @@ const Header = () => (
       `}
     >
       <NavLink to="/" activeClassName="current-page">
-        Home
+        Notes
       </NavLink>
       <NavLink to="/contact/" activeClassName="current-page">
         Contact
